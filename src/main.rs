@@ -3,6 +3,13 @@
 extern crate term;
 
 fn main() {
+
+    string_test();
+    stack_test();
+    color_write();
+}
+
+fn color_write() {
     let mut t = term::stdout().unwrap();
     t.fg(term::color::GREEN).unwrap();
     write!(t,"Hello ").unwrap();
@@ -12,17 +19,27 @@ fn main() {
 
     t.reset().unwrap();
 
-    stringTest()
 }
 
-fn stringTest() {
-    let s = String::from("Test");
+fn string_test() {
+    let s = String::from("Shree");
      heap_example(s);
 }
 
 
 fn heap_example(input: String) {
     let mystr =  input;
-    let _otherstr = mystr;
-    println!("{}", mystr)
+    //let _otherstr = mystr;
+    println!("{}", mystr);
+}
+
+fn stack_test(){
+    let i = 12121993;
+    stack_example(i);
+}
+
+fn stack_example(input: i32){
+    let x = input;
+    let _y = x;
+    println!("{}", x);
 }
